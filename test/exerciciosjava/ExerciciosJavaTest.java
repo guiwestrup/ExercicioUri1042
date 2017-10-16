@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 public class ExerciciosJavaTest 
 {
     private ExerciciosJava teste;
+    private Ordena ordena;
     public ExerciciosJavaTest() 
     {
         teste = new ExerciciosJava();
@@ -13,18 +14,10 @@ public class ExerciciosJavaTest
     @Test
     public void Testar()
     {
-        int num[] = new int[3];
-        int esperado[] = new int[3];
-        num[0] = 7;
-        num[1] = 21;
-        num[2] = -14;
+        int[] num = {7,21,-14};
         
-        esperado[0] = -14;
-        esperado[1] = 7;
-        esperado[2] = 21;
-        for (int i = 0;i<3;i++)
-        {
-            Assert.assertArrayEquals(esperado[i], ExerciciosJava.ordena(num), 1);
-        }
+        int[] esperado = {-14, 7, 21};
+        Assert.assertArrayEquals("Deu errado", esperado, Ordena.ordena(num));
+        
     }
 }

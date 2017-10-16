@@ -13,38 +13,8 @@ import java.util.Scanner;
  */
 public class ExerciciosJava 
 {
-    public static void ordena(int num[])
-    {
-        boolean troca = true;
-        while (troca) 
-        {
-                troca = false;
-
-                for (int posicao = 0; posicao < (num.length)-1; posicao++)
-                {
-                        if (num[posicao] > num[posicao+1])
-                        {
-                                int variavelAuxiliar = num[posicao+1];
-                                num[posicao+1] = num[posicao];
-                                num[posicao] = variavelAuxiliar;
-                                troca = true;
-                        }
-                }
-
-        }
-        for (int n=0;n<3;n++)
-        {
-            System.out.println(num[n]);
-        }
-        System.out.println();
-    }
-    public static void imprimi(int copia[])
-    {
-        for (int posicao = 0; posicao<3;posicao++)
-        {
-            System.out.println(copia[posicao]);
-        }
-    }
+    private Ordena ordena;
+    private Imprime imprimi;
     public static void main(String[] args) 
     {
         Scanner input = new Scanner(System.in);
@@ -55,8 +25,9 @@ public class ExerciciosJava
             num[n] = input.nextInt();
             copia[n] = num[n];
         }
-        ordena(num);
-        imprimi(copia);
+        Ordena.ordena(num);
+        Imprime.imprimi(num);
+        System.out.println();
+        Imprime.imprimi(copia);
     }
-
 }
